@@ -35,12 +35,22 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+'guards' => [
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
     ],
+
+    'guru' => [
+        'driver' => 'session',
+        'provider' => 'gurus',
+    ],
+
+    'wali' => [
+        'driver' => 'session',
+        'provider' => 'wali_murids',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------
@@ -59,17 +69,22 @@ return [
     |
     */
 
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+'providers' => [
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\User::class,
     ],
+
+    'gurus' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Guru::class,
+    ],
+
+    'wali_murids' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\WaliMurid::class,
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------
